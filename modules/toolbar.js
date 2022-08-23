@@ -9,6 +9,7 @@ const debug = logger('quill:toolbar');
 class Toolbar extends Module {
   constructor(quill, options) {
     super(quill, options);
+
     if (Array.isArray(this.options.container)) {
       const container = document.createElement('div');
       addControls(container, this.options.container);
@@ -20,7 +21,8 @@ class Toolbar extends Module {
       this.container = this.options.container;
     }
     if (!(this.container instanceof HTMLElement)) {
-      return debug.error('Container required for toolbar', this.options);
+      debug.error('Container required for toolbar', this.options);
+      return;
     }
     this.container.classList.add('ql-toolbar');
     this.controls = [];
@@ -175,6 +177,7 @@ function addControls(container, groups) {
         if (Array.isArray(value)) {
           addSelect(group, format, value);
         } else {
+          // ADD LISTS, INDENT, etc...
           addButton(group, format, value);
         }
       }

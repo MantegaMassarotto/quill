@@ -46,6 +46,8 @@ The Toolbar module allow users to easily format Quill's contents.
     </span>
     <span class="ql-formats">
       <button class="ql-link"></button>
+      <button class="ql-hyperlink"></button>
+      <button class="ql-hyperlinkcall"></button>
       <button class="ql-image"></button>
     </span>
   </div>

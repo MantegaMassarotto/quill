@@ -27,7 +27,7 @@ permalink: /1.0/standalone/snow/
 <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 <script>
   var quill = new Quill('#snow-container', {
-    placeholder: 'Compose an epic...',
+    placeholder: 'Compose aaaepic...',
     theme: 'snow'
   });
 </script>

@@ -60,6 +60,8 @@ By default all formats are enabled and allowed to exist within a Quill editor an
     </span>
     <span class="ql-formats">
       <button class="ql-link"></button>
+      <button class="ql-hyperlink"></button>
+      <button class="ql-hyperlinkcall"></button>
       <button class="ql-image"></button>
       <button class="ql-video"></button>
       <button class="ql-formula"></button>

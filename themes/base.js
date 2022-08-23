@@ -88,6 +88,7 @@ class BaseTheme extends Theme {
   }
 
   buildButtons(buttons, icons) {
+    // console.log('build buttons');
     Array.from(buttons).forEach(button => {
       const className = button.getAttribute('class') || '';
       className.split(/\s+/).forEach(name => {
@@ -249,6 +250,40 @@ class BaseTooltip extends Tooltip {
         } else {
           this.restoreFocus();
           this.quill.format('link', value, Emitter.sources.USER);
+        }
+        this.quill.root.scrollTop = scrollTop;
+        break;
+      }
+      case 'hyperlink': {
+        const { scrollTop } = this.quill.root;
+        if (this.linkRange) {
+          this.quill.formatText(
+            this.linkRange,
+            'hyperlink',
+            value,
+            Emitter.sources.USER,
+          );
+          delete this.linkRange;
+        } else {
+          this.restoreFocus();
+          this.quill.format('hyperlink', value, Emitter.sources.USER);
+        }
+        this.quill.root.scrollTop = scrollTop;
+        break;
+      }
+      case 'hyperlinkcall': {
+        const { scrollTop } = this.quill.root;
+        if (this.linkRange) {
+          this.quill.formatText(
+            this.linkRange,
+            'hyperlinkcall',
+            value,
+            Emitter.sources.USER,
+          );
+          delete this.linkRange;
+        } else {
+          this.restoreFocus();
+          this.quill.format('hyperlinkcall', value, Emitter.sources.USER);
         }
         this.quill.root.scrollTop = scrollTop;
         break;

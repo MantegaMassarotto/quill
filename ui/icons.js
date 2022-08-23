@@ -18,6 +18,8 @@ import imageIcon from '../assets/icons/image.svg';
 import indentIcon from '../assets/icons/indent.svg';
 import outdentIcon from '../assets/icons/outdent.svg';
 import linkIcon from '../assets/icons/link.svg';
+import hyperlinkIcon from '../assets/icons/internal-link.svg';
+import hyperlinkcallIcon from '../assets/icons/hyperlinkcall.svg';
 import listBulletIcon from '../assets/icons/list-bullet.svg';
 import listCheckIcon from '../assets/icons/list-check.svg';
 import listOrderedIcon from '../assets/icons/list-ordered.svg';
@@ -58,6 +60,8 @@ export default {
     '-1': outdentIcon,
   },
   link: linkIcon,
+  hyperlink: hyperlinkIcon,
+  hyperlinkcall: hyperlinkcallIcon,
   list: {
     bullet: listBulletIcon,
     check: listCheckIcon,

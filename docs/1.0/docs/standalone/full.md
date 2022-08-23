@@ -56,6 +56,8 @@ permalink: /1.0/standalone/full/
     </span>
     <span class="ql-formats">
       <button class="ql-link"></button>
+      <button class="ql-hyperlink"></button>
+      <button class="ql-hyperlinkcall"></button>
       <button class="ql-image"></button>
       <button class="ql-video"></button>
       <button class="ql-formula"></button>

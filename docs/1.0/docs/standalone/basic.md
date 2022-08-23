@@ -64,6 +64,8 @@ permalink: /1.0/standalone/basic/
   <button class="ql-underline" title='Underline'>Under</button>
   <button class="ql-strike" title='Strikethrough'>Strike</button>
   <button class="ql-link" title='Link'>Link</button>
+  <button class="ql-hyperlink" title='Internal Link'>Internal Link</button>
+  <button class="ql-hyperlinkcall" title='Internal Link Call'>Internal Link Call</button>
   <button class="ql-image" title='Image'>Image</button>
   <button class="ql-list" title='Bullet' value="bullet">Bullet</button>
   <button class="ql-list" title='List' value="ordered">List</button>

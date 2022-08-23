@@ -7,7 +7,7 @@ import icons from '../ui/icons';
 
 const TOOLBAR_CONFIG = [
   [{ header: ['1', '2', '3', false] }],
-  ['bold', 'italic', 'underline', 'link'],
+  ['bold', 'italic', 'underline', 'link', 'hyperlink', 'hyperlinkcall'],
   [{ list: 'ordered' }, { list: 'bullet' }],
   ['clean'],
 ];
@@ -89,6 +89,7 @@ class SnowTheme extends BaseTheme {
   }
 
   extendToolbar(toolbar) {
+    // console.log('extend toll bar');
     toolbar.container.classList.add('ql-snow');
     this.buildButtons(toolbar.container.querySelectorAll('button'), icons);
     this.buildPickers(toolbar.container.querySelectorAll('select'), icons);
@@ -122,6 +123,28 @@ SnowTheme.DEFAULTS = merge({}, BaseTheme.DEFAULTS, {
             tooltip.edit('link', preview);
           } else {
             this.quill.format('link', false);
+          }
+        },
+        hyperlink(value) {
+          if (value) {
+            const range = this.quill.getSelection();
+            if (range == null || range.length === 0) return;
+            const text = this.quill.getText(range);
+            const { tooltip } = this.quill.theme;
+            tooltip.edit('hyperlink', text);
+          } else {
+            this.quill.format('hyperlink', false);
+          }
+        },
+        hyperlinkcall(value) {
+          if (value) {
+            const range = this.quill.getSelection();
+            if (range == null || range.length === 0) return;
+            const text = this.quill.getText(range);
+            const { tooltip } = this.quill.theme;
+            tooltip.edit('hyperlinkcall', text);
+          } else {
+            this.quill.format('hyperlinkcall', false);
           }
         },
       },
