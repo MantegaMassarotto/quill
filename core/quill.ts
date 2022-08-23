@@ -287,7 +287,7 @@ class Quill {
   }
 
   format(name, value, source = Emitter.sources.API) {
-    console.log('format...');
+    // console.log('format...');
 
     return modify.call(
       this,
@@ -296,23 +296,23 @@ class Quill {
         let change = new Delta();
         if (range == null) return change;
         if (this.scroll.query(name, Parchment.Scope.BLOCK)) {
-          console.log('entra aqui I');
+          // console.log('entra aqui I');
           change = this.editor.formatLine(range.index, range.length, {
             [name]: value,
           });
         } else if (range.length === 0) {
-          console.log('entra aqui II');
+          // console.log('entra aqui II');
 
           this.selection.format(name, value);
           return change;
         } else {
-          console.log('entra aqui III');
+          // console.log('entra aqui III');
 
           change = this.editor.formatText(range.index, range.length, {
             [name]: value,
           });
 
-          console.log('retorna');
+          // console.log('retorna');
         }
         this.setSelection(range, Emitter.sources.SILENT);
         return change;
