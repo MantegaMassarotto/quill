@@ -6,7 +6,8 @@ class Hyperlinkcall extends Inline {
 
   static create(value) {
     const node = super.create(value) as Element;
-    node.setAttribute('href', `#${value}`);
+    const newValue = value.replace(/(#)/gm, '').trim();
+    node.setAttribute('href', `#${newValue}`);
     return node;
   }
 
