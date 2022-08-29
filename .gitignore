@@ -2,7 +2,7 @@
 !.eslintrc.json
 !.eslintignore
 
-/dist
+# /dist
 /node_modules
 /selenium
 /docs/_site
