@@ -106,6 +106,8 @@
   width: 1.2em;
 }
 @supports (display: contents) {
+  .ql-editor li[data-list=alpha] > .ql-ui,
+  .ql-editor li[data-list=roman] > .ql-ui,
   .ql-editor li[data-list=bullet] > .ql-ui,
   .ql-editor li[data-list=ordered] > .ql-ui {
     display: contents;
@@ -139,6 +141,18 @@
 }
 .ql-editor li[data-list=ordered] > .ql-ui:before {
   content: counter(list-0, decimal) '. ';
+}
+.ql-editor li[data-list=alpha] {
+  counter-increment: list-0;
+}
+.ql-editor li[data-list=alpha] > .ql-ui:before {
+  content: counter(list-0, lower-alpha) '. ';
+}
+.ql-editor li[data-list=roman] {
+  counter-increment: list-0;
+}
+.ql-editor li[data-list=roman] > .ql-ui:before {
+  content: counter(list-0, lower-roman) '. ';
 }
 .ql-editor li[data-list=ordered].ql-indent-1 {
   counter-increment: list-1;

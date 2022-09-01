@@ -22,6 +22,8 @@ import hyperlinkIcon from '../assets/icons/internal-link.svg';
 import hyperlinkcallIcon from '../assets/icons/hyperlinkcall.svg';
 import listBulletIcon from '../assets/icons/list-bullet.svg';
 import listCheckIcon from '../assets/icons/list-check.svg';
+import listAlphaIcon from '../assets/icons/list-alpha.svg';
+import listRomanIcon from '../assets/icons/list-roman.svg';
 import listOrderedIcon from '../assets/icons/list-ordered.svg';
 import subscriptIcon from '../assets/icons/subscript.svg';
 import superscriptIcon from '../assets/icons/superscript.svg';
@@ -66,6 +68,8 @@ export default {
     bullet: listBulletIcon,
     check: listCheckIcon,
     ordered: listOrderedIcon,
+    alpha: listAlphaIcon,
+    roman: listRomanIcon,
   },
   script: {
     sub: subscriptIcon,

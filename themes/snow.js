@@ -8,7 +8,12 @@ import icons from '../ui/icons';
 const TOOLBAR_CONFIG = [
   [{ header: ['1', '2', '3', false] }],
   ['bold', 'italic', 'underline', 'link', 'hyperlink', 'hyperlinkcall'],
-  [{ list: 'ordered' }, { list: 'bullet' }],
+  [
+    { list: 'ordered' },
+    { list: 'bullet' },
+    { list: 'alpha' },
+    { list: 'roman' },
+  ],
   ['clean'],
 ];
 

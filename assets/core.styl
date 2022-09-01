@@ -82,6 +82,8 @@ resets(arr)
       width: LIST_STYLE_WIDTH
 
   @supports (display: contents)
+    li[data-list=alpha],
+    li[data-list=roman],
     li[data-list=bullet],
     li[data-list=ordered]
       > .ql-ui
@@ -109,6 +111,17 @@ resets(arr)
     counter-increment: list-0
     > .ql-ui:before
       content: unquote('counter(list-0, ' + LIST_STYLE[0] + ')') '. '
+
+  li[data-list=alpha]
+    counter-increment: list-0
+    > .ql-ui:before
+      content: unquote('counter(list-0, ' + LIST_STYLE[1] + ')') '. '
+
+  li[data-list=roman]
+    counter-increment: list-0
+    > .ql-ui:before
+      content: unquote('counter(list-0, ' + LIST_STYLE[2] + ')') '. '    
+      
   for num in (1..MAX_INDENT)
     li[data-list=ordered].ql-indent-{num}
       counter-increment: unquote('list-' + num)

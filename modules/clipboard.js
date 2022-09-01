@@ -438,6 +438,9 @@ function matchIndent(node, delta, scroll) {
 
 function matchList(node, delta) {
   const list = node.tagName === 'OL' ? 'ordered' : 'bullet';
+  if (node.tagName === 'OL') {
+    return 'ordered';
+  }
   return applyFormat(delta, 'list', list);
 }
 

@@ -265,16 +265,27 @@ function convertListHTML(items, lastIndent, types) {
   }
   const [{ child, offset, length, indent, type }, ...rest] = items;
   const [tag, attribute] = getListType(type);
+
+  let initialTag = '';
+
+  if (type === 'alpha') {
+    initialTag = `<${tag} type="a">`;
+  } else if (type === 'roman') {
+    initialTag = `<${tag} type="i">`;
+  } else {
+    initialTag = `<${tag}>`;
+  }
+
   if (indent > lastIndent) {
     types.push(type);
     if (indent === lastIndent + 1) {
-      return `<${tag}><li${attribute}>${convertHTML(
+      return `${initialTag}<li${attribute}>${convertHTML(
         child,
         offset,
         length,
       )}${convertListHTML(rest, indent, types)}`;
     }
-    return `<${tag}><li>${convertListHTML(items, lastIndent + 1, types)}`;
+    return `${initialTag}<li>${convertListHTML(items, lastIndent + 1, types)}`;
   }
   const previousType = types[types.length - 1];
   if (indent === lastIndent && type === previousType) {
@@ -349,7 +360,8 @@ function combineFormats(formats, combined) {
 }
 
 function getListType(type) {
-  const tag = type === 'ordered' ? 'ol' : 'ul';
+  const tag =
+    type === 'ordered' || type === 'alpha' || type === 'roman' ? 'ol' : 'ul';
   switch (type) {
     case 'checked':
       return [tag, ' data-list="checked"'];
